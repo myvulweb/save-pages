@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://www.cnblogs.com/h-%2Dd/p/6054813.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="origin">
+<title>【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园</title>
+<meta property="og:description" content="创建环境 创建环境 系统：win 10 软件：eclipse，maven. 创建步骤 创建一个Maven Web项目，可以参照：【Maven】Eclipse 使用Maven创建Java Web项目 添">
+<link type="text/css" rel="stylesheet" href="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/bundle-newblue.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/bundle-newblue-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/h--d/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/h--d/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/h--d/wlwmanifest.xml">
+<script src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/f.txt"></script><script src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/amp4ads-host-v0.js"></script><script src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/pubads_impl_rendering_285.js"></script><script async="" src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/analytics.js"></script><script type="text/javascript" src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/encoder.js"></script><script src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'h--d', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/blog-common.js" type="text/javascript"></script>
+<link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=www.cnblogs.com" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=www.cnblogs.com"></script><script src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/pubads_impl_285.js" async=""></script><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-31/html/container.html"></head>
+<body>
+<a name="top"></a>
+
+
+<div class="pagelayout">
+    
+<table width="97%" align="center" cellpadding="2" cellspacing="0">
+<tbody><tr>
+	<td class="mytitle" align="center" width="30%"><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/h--d/">H__D</a></td>
+	<td>&nbsp;</td>
+	<td width="50%">
+		<table height="30" cellspacing="0" cellpadding="0" width="100%" border="0">
+		<tbody><tr>
+			<td width="100"><a href="https://www.cnblogs.com/"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/icon_hjblog.gif" border="0"></a></td>
+			<td width="10"><a href="https://www.cnblogs.com/logout.aspx"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/out.gif" border="0"></a></td>
+			
+		</tr>
+		</tbody></table>	
+	</td>
+</tr>
+<tr>
+	<td colspan="3" background="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/top.jpg" height="184" valign="middle" align="center"></td>
+</tr>
+</tbody></table>
+
+    <table width="90%" align="center" cellpadding="5" cellspacing="0" border="0" id="main">
+        <tbody><tr>
+            <td valign="top" id="sidebar">
+                <div>
+                    
+<div class="listtitle">公告</div>
+<ul class="list">
+		<li class="listitem">
+			<center><div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/h--d/">H__D</a><br>园龄：<a href="https://home.cnblogs.com/u/h--d/" title="入园时间：2015-12-04">3年</a><br>粉丝：<a href="https://home.cnblogs.com/u/h--d/followers/">60</a><br>关注：<a href="https://home.cnblogs.com/u/h--d/followees/">5</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;9cb367c8-7e9a-e511-9fc1-ac853d9f53cc&#39;)">+加关注</a></div><script>getFollowStatus('9cb367c8-7e9a-e511-9fc1-ac853d9f53cc')</script></div></div><script type="text/javascript">loadBlogNews();</script></center>
+	</li>
+</ul>
+                    <div class="listtitle">日历</div>
+                    <table width="100%" height="200">
+                        <tbody><tr>
+                            <td>
+                                <div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/11/01&#39;);return false;">&lt;</a></td><td align="center">2018年12月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/01/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">25</td><td class="CalOtherMonthDay" align="center">26</td><td class="CalOtherMonthDay" align="center">27</td><td class="CalOtherMonthDay" align="center">28</td><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalWeekendDay" align="center">1</td></tr><tr><td class="CalWeekendDay" align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center"><a href="https://www.cnblogs.com/h--d/archive/2018/12/06.html"><u>6</u></a></td><td align="center"><a href="https://www.cnblogs.com/h--d/archive/2018/12/07.html"><u>7</u></a></td><td class="CalWeekendDay" align="center">8</td></tr><tr><td class="CalWeekendDay" align="center"><a href="https://www.cnblogs.com/h--d/archive/2018/12/09.html"><u>9</u></a></td><td align="center"><a href="https://www.cnblogs.com/h--d/archive/2018/12/10.html"><u>10</u></a></td><td align="center"><a href="https://www.cnblogs.com/h--d/archive/2018/12/11.html"><u>11</u></a></td><td align="center">12</td><td align="center"><a href="https://www.cnblogs.com/h--d/archive/2018/12/13.html"><u>13</u></a></td><td align="center">14</td><td class="CalWeekendDay" align="center">15</td></tr><tr><td class="CalWeekendDay" align="center">16</td><td class="CalTodayDay" align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td class="CalWeekendDay" align="center">22</td></tr><tr><td class="CalWeekendDay" align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td class="CalWeekendDay" align="center">29</td></tr><tr><td class="CalWeekendDay" align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    
+                        <div id="blog_stats">
+<div class="listtitle">统计</div>
+	<ul class="list">
+		<li class="listitem">随笔 - 122
+		</li><li class="listitem">文章 - 0
+		</li><li class="listitem">评论 - 59
+		</li><li class="listitem">引用 - 0
+	</li>
+</ul></div>
+                        
+<h1 class="listtitle">导航</h1>
+<ul class="list">
+			<li class="listitem"><a id="blog_nav_sitehome" class="listitem" href="https://www.cnblogs.com/">博客园</a></li>
+			<li class="listitem"><a id="blog_nav_myhome" href="https://www.cnblogs.com/h--d/">首页</a>
+			</li><li class="listitem"><a id="blog_nav_newpost" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">发新随笔</a>
+			</li><li class="listitem"><a id="MyLinks1_NewArticleLink" class="listitem" href="https://www.cnblogs.com/EnterMyBlog.aspx?NewArticle=1">发新文章</a></li>
+			<li class="listitem"><a id="blog_nav_contact" accesskey="9" class="listitem" rel="nofollow" href="https://msg.cnblogs.com/send/H__D">联系</a></li>
+			<li class="listitem"><a id="blog_nav_rss" class="listitem" href="https://www.cnblogs.com/h--d/rss">订阅</a><a id="blog_nav_rss_image" href="https://www.cnblogs.com/h--d/rss"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/xml.gif" alt="订阅"></a>
+			</li><li class="listitem"><a id="blog_nav_admin" class="listitem" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+                        <div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/h--d/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="https://www.cnblogs.com/h--d/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="https://www.cnblogs.com/h--d/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="https://www.cnblogs.com/h--d/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="https://www.cnblogs.com/h--d/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<h3 class="catListTitle">我的标签</h3>
+<div id="MyTag">
+<ul>
+<li><a href="https://www.cnblogs.com/h--d/tag/Java/">Java</a>(48)</li><li><a href="https://www.cnblogs.com/h--d/tag/Linux/">Linux</a>(38)</li><li><a href="https://www.cnblogs.com/h--d/tag/Web/">Web</a>(28)</li><li><a href="https://www.cnblogs.com/h--d/tag/Maven/">Maven</a>(10)</li><li><a href="https://www.cnblogs.com/h--d/tag/Mysql/">Mysql</a>(10)</li><li><a href="https://www.cnblogs.com/h--d/tag/Application/">Application</a>(9)</li><li><a href="https://www.cnblogs.com/h--d/tag/WebService/">WebService</a>(7)</li><li><a href="https://www.cnblogs.com/h--d/tag/Mail/">Mail</a>(6)</li><li><a href="https://www.cnblogs.com/h--d/tag/Nginx/">Nginx</a>(5)</li><li><a href="https://www.cnblogs.com/h--d/tag/NIFI/">NIFI</a>(5)</li><li><a href="https://www.cnblogs.com/h--d/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+		<h1 class="listtitle">随笔分类</h1>
+		
+				<ul class="list">
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_0" class="listitem" href="https://www.cnblogs.com/h--d/category/1344096.html">Application(8)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_1" class="listitem" href="https://www.cnblogs.com/h--d/category/1359585.html">ElasticStack(1)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_2" class="listitem" href="https://www.cnblogs.com/h--d/category/1140638.html">Game(1)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_3" class="listitem" href="https://www.cnblogs.com/h--d/category/1360257.html">Git(1)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_4" class="listitem" href="https://www.cnblogs.com/h--d/category/1343841.html">Go(1)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_5" class="listitem" href="https://www.cnblogs.com/h--d/category/929644.html">IOS(1)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_6" class="listitem" href="https://www.cnblogs.com/h--d/category/782963.html">Java(48)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_7" class="listitem" href="https://www.cnblogs.com/h--d/category/858048.html">JS(4)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_8" class="listitem" href="https://www.cnblogs.com/h--d/category/786607.html">Life(3)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_9" class="listitem" href="https://www.cnblogs.com/h--d/category/770600.html">Linux(24)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_10" class="listitem" href="https://www.cnblogs.com/h--d/category/842814.html">Mac(3)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_11" class="listitem" href="https://www.cnblogs.com/h--d/category/917384.html">Mail(6)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_12" class="listitem" href="https://www.cnblogs.com/h--d/category/883570.html">Memcached(2)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_13" class="listitem" href="https://www.cnblogs.com/h--d/category/1344306.html">MQ(3)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_14" class="listitem" href="https://www.cnblogs.com/h--d/category/782962.html">Mysql(10)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_15" class="listitem" href="https://www.cnblogs.com/h--d/category/1171941.html">Nodejs(1)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_16" class="listitem" href="https://www.cnblogs.com/h--d/category/1246217.html">Redis(5)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_17" class="listitem" href="https://www.cnblogs.com/h--d/category/1282663.html">Ruby</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_18" class="listitem" href="https://www.cnblogs.com/h--d/category/1047453.html">Spring(2)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_19" class="listitem" href="https://www.cnblogs.com/h--d/category/1334376.html">Test(1)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_20" class="listitem" href="https://www.cnblogs.com/h--d/category/782964.html">Tomcat(3)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_21" class="listitem" href="https://www.cnblogs.com/h--d/category/865570.html">Web(27)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_22" class="listitem" href="https://www.cnblogs.com/h--d/category/1042071.html">WebService(7)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_0_Link_23" class="listitem" href="https://www.cnblogs.com/h--d/category/846477.html">Win(2)</a>  </li>
+			
+				</ul>
+			
+	
+		<h1 class="listtitle">随笔档案</h1>
+		
+				<ul class="list">
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_0" class="listitem" href="https://www.cnblogs.com/h--d/archive/2018/12.html">2018年12月 (7)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_1" class="listitem" href="https://www.cnblogs.com/h--d/archive/2018/11.html">2018年11月 (15)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_2" class="listitem" href="https://www.cnblogs.com/h--d/archive/2018/09.html">2018年9月 (1)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_3" class="listitem" href="https://www.cnblogs.com/h--d/archive/2018/08.html">2018年8月 (6)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_4" class="listitem" href="https://www.cnblogs.com/h--d/archive/2018/07.html">2018年7月 (3)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_5" class="listitem" href="https://www.cnblogs.com/h--d/archive/2018/03.html">2018年3月 (1)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_6" class="listitem" href="https://www.cnblogs.com/h--d/archive/2018/01.html">2018年1月 (3)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_7" class="listitem" href="https://www.cnblogs.com/h--d/archive/2017/11.html">2017年11月 (6)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_8" class="listitem" href="https://www.cnblogs.com/h--d/archive/2017/10.html">2017年10月 (1)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_9" class="listitem" href="https://www.cnblogs.com/h--d/archive/2017/09.html">2017年9月 (2)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_10" class="listitem" href="https://www.cnblogs.com/h--d/archive/2017/08.html">2017年8月 (4)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_11" class="listitem" href="https://www.cnblogs.com/h--d/archive/2017/07.html">2017年7月 (11)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_12" class="listitem" href="https://www.cnblogs.com/h--d/archive/2017/06.html">2017年6月 (2)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_13" class="listitem" href="https://www.cnblogs.com/h--d/archive/2017/04.html">2017年4月 (2)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_14" class="listitem" href="https://www.cnblogs.com/h--d/archive/2017/03.html">2017年3月 (2)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_15" class="listitem" href="https://www.cnblogs.com/h--d/archive/2016/12.html">2016年12月 (9)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_16" class="listitem" href="https://www.cnblogs.com/h--d/archive/2016/11.html">2016年11月 (4)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_17" class="listitem" href="https://www.cnblogs.com/h--d/archive/2016/10.html">2016年10月 (7)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_18" class="listitem" href="https://www.cnblogs.com/h--d/archive/2016/09.html">2016年9月 (5)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_19" class="listitem" href="https://www.cnblogs.com/h--d/archive/2016/08.html">2016年8月 (6)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_20" class="listitem" href="https://www.cnblogs.com/h--d/archive/2016/07.html">2016年7月 (12)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_21" class="listitem" href="https://www.cnblogs.com/h--d/archive/2016/06.html">2016年6月 (5)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_22" class="listitem" href="https://www.cnblogs.com/h--d/archive/2016/05.html">2016年5月 (1)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_23" class="listitem" href="https://www.cnblogs.com/h--d/archive/2016/02.html">2016年2月 (2)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_24" class="listitem" href="https://www.cnblogs.com/h--d/archive/2016/01.html">2016年1月 (2)</a>  </li>
+			
+				<li class="listitem"><a id="CatList_LinkList_1_Link_25" class="listitem" href="https://www.cnblogs.com/h--d/archive/2015/12.html">2015年12月 (3)</a>  </li>
+			
+				</ul>
+			
+	
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/h--d/p/5846675.html#4137878">1. Re:【JS】点击页面判断是否安装app并打开,否则跳转下载的方法</a></li>
+        <li class="recent_comment_body">function() { if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) { ......</li>
+        <li class="recent_comment_author">--91stefan</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/h--d/p/5638092.html#4117606">2. Re:【JAVA】通过HttpURLConnection 上传和下载文件（二）</a></li>
+        <li class="recent_comment_body">mark，发现这个可以直接下载https开头的文件</li>
+        <li class="recent_comment_author">--zeng1994</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/h--d/p/6150320.html#4108919">3. Re:【Java】使用iText生成PDF文件</a></li>
+        <li class="recent_comment_body">就问一个问题，商用免费不？</li>
+        <li class="recent_comment_author">--要改变世界的攻城狮</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/h--d/p/5846675.html#4098351">4. Re:【JS】点击页面判断是否安装app并打开,否则跳转下载的方法</a></li>
+        <li class="recent_comment_body">@呆若木羊用的什么浏览器 我是通过document.hidden判断的你可以试试document.visibilityStatedocument.visibilityState有两个值，分别为hidd......</li>
+        <li class="recent_comment_author">--zibling</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/h--d/p/5846675.html#4098320">5. Re:【JS】点击页面判断是否安装app并打开,否则跳转下载的方法</a></li>
+        <li class="recent_comment_body">@ziblingios9+ 该方法好像无效了...</li>
+        <li class="recent_comment_author">--呆若木羊</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/h--d/p/6001366.html">1. 【Maven】使用Maven构建多模块项目(80294)</a></li><li><a href="https://www.cnblogs.com/h--d/p/5761649.html">2. 【Java】JavaWeb文件上传和下载(37979)</a></li><li><a href="https://www.cnblogs.com/h--d/p/6507421.html">3. 【Linux】Tree命令安装和使用(33584)</a></li><li><a href="https://www.cnblogs.com/h--d/p/5638092.html">4. 【JAVA】通过HttpURLConnection 上传和下载文件（二）(32798)</a></li><li><a href="https://www.cnblogs.com/h--d/p/5976665.html">5. 【JAVA】通过HttpClient发送HTTP请求的方法(28112)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="https://www.cnblogs.com/h--d/p/5761649.html">1. 【Java】JavaWeb文件上传和下载(13)</a></li><li><a href="https://www.cnblogs.com/h--d/p/5846675.html">2. 【JS】点击页面判断是否安装app并打开,否则跳转下载的方法(12)</a></li><li><a href="https://www.cnblogs.com/h--d/p/6001366.html">3. 【Maven】使用Maven构建多模块项目(9)</a></li><li><a href="https://www.cnblogs.com/h--d/p/6150320.html">4. 【Java】使用iText生成PDF文件(8)</a></li><li><a href="https://www.cnblogs.com/h--d/p/5673085.html">5. 【Linux】Jenkins安装（一）(4)</a></li></ul></div>
+</div></div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/h--d/p/6001366.html">1. 【Maven】使用Maven构建多模块项目(15)</a></li><li><a href="https://www.cnblogs.com/h--d/p/6150320.html">2. 【Java】使用iText生成PDF文件(11)</a></li><li><a href="https://www.cnblogs.com/h--d/p/6000778.html">3. 【Maven】Eclipse 使用Maven创建Java Web项目(4)</a></li><li><a href="https://www.cnblogs.com/h--d/p/5761649.html">4. 【Java】JavaWeb文件上传和下载(3)</a></li><li><a href="https://www.cnblogs.com/h--d/p/5732743.html">5. 【JS】jquery通知插件toastr(3)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+                    
+                    <div class="spacer">&nbsp;</div>
+                </div>
+            </td>
+            <td valign="top" id="content">
+                <div>
+                    
+<div id="post_detail">
+<div class="singlepost">
+	<div class="posttitle">
+		<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/h--d/p/6054813.html">【Maven】Eclipse 使用Maven创建SpringMVC Web项目</a>
+	</div>
+	<div id="cnblogs_post_body" class="blogpost-body"><ul>
+<li>
+<h3>创建环境</h3>
+</li>
+</ul>
+<p>　　系统：win 10</p>
+<p>　　软件：eclipse，maven.</p>
+<h3>创建步骤</h3>
+<ul>
+<li>　　创建一个Maven Web项目，可以参照：<a id="cb_post_title_url" class="singleposttitle" href="http://www.cnblogs.com/h--d/p/6000778.html">【Maven】Eclipse 使用Maven创建Java Web项目</a></li>
+<li>　　添加spring依赖的jar包，在pom文件中设置依赖即可
+<div class="cnblogs_code"><div>按 Ctrl+C 复制代码</div><textarea style="width: 810px; height: 600px; font-family: &quot;Courier New&quot;; font-size: 12px; line-height: 1.5;"></textarea><div>按 Ctrl+C 复制代码</div></div>
+</li>
+<li>　　编辑web.xml文件
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008080"> 1</span> <span style="color: #0000ff">&lt;?</span><span style="color: #ff00ff">xml version="1.0" encoding="UTF-8"</span><span style="color: #0000ff">?&gt;</span>
+<span style="color: #008080"> 2</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">web-app </span><span style="color: #ff0000">xmlns:xsi</span><span style="color: #0000ff">="http://www.w3.org/2001/XMLSchema-instance"</span>
+<span style="color: #008080"> 3</span> <span style="color: #ff0000">    xmlns</span><span style="color: #0000ff">="http://java.sun.com/xml/ns/javaee"</span>
+<span style="color: #008080"> 4</span> <span style="color: #ff0000">    xsi:schemaLocation</span><span style="color: #0000ff">="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"</span>
+<span style="color: #008080"> 5</span> <span style="color: #ff0000">    id</span><span style="color: #0000ff">="WebApp_ID"</span><span style="color: #ff0000"> version</span><span style="color: #0000ff">="3.0"</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080"> 6</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">display-name</span><span style="color: #0000ff">&gt;</span>test-spring<span style="color: #0000ff">&lt;/</span><span style="color: #800000">display-name</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080"> 7</span> 
+<span style="color: #008080"> 8</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> 指定Spring Bean的配置文件所在目录。默认配置在WEB-INF目录下 </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080"> 9</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">context-param</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">10</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">param-name</span><span style="color: #0000ff">&gt;</span>contextConfigLocation<span style="color: #0000ff">&lt;/</span><span style="color: #800000">param-name</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">11</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">param-value</span><span style="color: #0000ff">&gt;</span>classpath:spring/spring-context.xml<span style="color: #0000ff">&lt;/</span><span style="color: #800000">param-value</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">12</span>     <span style="color: #0000ff">&lt;/</span><span style="color: #800000">context-param</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">13</span> 
+<span style="color: #008080">14</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> Spring配置 </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">15</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">listener</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">16</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">listener-class</span><span style="color: #0000ff">&gt;</span>org.springframework.web.context.ContextLoaderListener<span style="color: #0000ff">&lt;/</span><span style="color: #800000">listener-class</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">17</span>     <span style="color: #0000ff">&lt;/</span><span style="color: #800000">listener</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">18</span> 
+<span style="color: #008080">19</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> Spring MVC配置 </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">20</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">servlet</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">21</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">servlet-name</span><span style="color: #0000ff">&gt;</span>spring<span style="color: #0000ff">&lt;/</span><span style="color: #800000">servlet-name</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">22</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">servlet-class</span><span style="color: #0000ff">&gt;</span>org.springframework.web.servlet.DispatcherServlet<span style="color: #0000ff">&lt;/</span><span style="color: #800000">servlet-class</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">23</span>         <span style="color: #008000">&lt;!--</span><span style="color: #008000"> 可以自定义servlet.xml配置文件的位置和名称，默认为WEB-INF目录下，名称为[&lt;servlet-name&gt;]-servlet.xml，如spring-servlet.xml </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">24</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">init-param</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">25</span>             <span style="color: #0000ff">&lt;</span><span style="color: #800000">param-name</span><span style="color: #0000ff">&gt;</span>contextConfigLocation<span style="color: #0000ff">&lt;/</span><span style="color: #800000">param-name</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">26</span>             <span style="color: #0000ff">&lt;</span><span style="color: #800000">param-value</span><span style="color: #0000ff">&gt;</span>classpath:spring/spring-mvc.xml<span style="color: #0000ff">&lt;/</span><span style="color: #800000">param-value</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">27</span>         <span style="color: #0000ff">&lt;/</span><span style="color: #800000">init-param</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">28</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">load-on-startup</span><span style="color: #0000ff">&gt;</span>1<span style="color: #0000ff">&lt;/</span><span style="color: #800000">load-on-startup</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">29</span>     <span style="color: #0000ff">&lt;/</span><span style="color: #800000">servlet</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">30</span> 
+<span style="color: #008080">31</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">servlet-mapping</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">32</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">servlet-name</span><span style="color: #0000ff">&gt;</span>spring<span style="color: #0000ff">&lt;/</span><span style="color: #800000">servlet-name</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">33</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">url-pattern</span><span style="color: #0000ff">&gt;</span>/<span style="color: #0000ff">&lt;/</span><span style="color: #800000">url-pattern</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">34</span>     <span style="color: #0000ff">&lt;/</span><span style="color: #800000">servlet-mapping</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">35</span> 
+<span style="color: #008080">36</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> 中文过滤器 </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">37</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">filter</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">38</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">filter-name</span><span style="color: #0000ff">&gt;</span>CharacterEncodingFilter<span style="color: #0000ff">&lt;/</span><span style="color: #800000">filter-name</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">39</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">filter-class</span><span style="color: #0000ff">&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span style="color: #0000ff">&lt;/</span><span style="color: #800000">filter-class</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">40</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">init-param</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">41</span>             <span style="color: #0000ff">&lt;</span><span style="color: #800000">param-name</span><span style="color: #0000ff">&gt;</span>encoding<span style="color: #0000ff">&lt;/</span><span style="color: #800000">param-name</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">42</span>             <span style="color: #0000ff">&lt;</span><span style="color: #800000">param-value</span><span style="color: #0000ff">&gt;</span>UTF-8<span style="color: #0000ff">&lt;/</span><span style="color: #800000">param-value</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">43</span>         <span style="color: #0000ff">&lt;/</span><span style="color: #800000">init-param</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">44</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">init-param</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">45</span>             <span style="color: #0000ff">&lt;</span><span style="color: #800000">param-name</span><span style="color: #0000ff">&gt;</span>forceEncoding<span style="color: #0000ff">&lt;/</span><span style="color: #800000">param-name</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">46</span>             <span style="color: #0000ff">&lt;</span><span style="color: #800000">param-value</span><span style="color: #0000ff">&gt;</span>true<span style="color: #0000ff">&lt;/</span><span style="color: #800000">param-value</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">47</span>         <span style="color: #0000ff">&lt;/</span><span style="color: #800000">init-param</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">48</span>     <span style="color: #0000ff">&lt;/</span><span style="color: #800000">filter</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">49</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">filter-mapping</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">50</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">filter-name</span><span style="color: #0000ff">&gt;</span>CharacterEncodingFilter<span style="color: #0000ff">&lt;/</span><span style="color: #800000">filter-name</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">51</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">url-pattern</span><span style="color: #0000ff">&gt;</span>/*<span style="color: #0000ff">&lt;/</span><span style="color: #800000">url-pattern</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">52</span>     <span style="color: #0000ff">&lt;/</span><span style="color: #800000">filter-mapping</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">53</span> 
+<span style="color: #008080">54</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">welcome-file-list</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">55</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">welcome-file</span><span style="color: #0000ff">&gt;</span>index.jsp<span style="color: #0000ff">&lt;/</span><span style="color: #800000">welcome-file</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">56</span>     <span style="color: #0000ff">&lt;/</span><span style="color: #800000">welcome-file-list</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">57</span> <span style="color: #0000ff">&lt;/</span><span style="color: #800000">web-app</span><span style="color: #0000ff">&gt;</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+</li>
+<li>　　在src/main/resources中新建一个文件夹spring，在spring文件夹中新建一个spring-content.xml的配置文件,进行相关配置</li>
+</ul>
+<p>　　　　<img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/851491-20161111162544077-527148642.png" alt=""></p>
+<div class="cnblogs_code"><img id="code_img_closed_163eecfb-876d-472f-b1ec-a800c016f8bd" class="code_img_closed" src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/ContractedBlock.gif" alt=""><img id="code_img_opened_163eecfb-876d-472f-b1ec-a800c016f8bd" class="code_img_opened" style="display: none" src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/ExpandedBlockStart.gif" alt="">
+<div id="cnblogs_code_open_163eecfb-876d-472f-b1ec-a800c016f8bd" class="cnblogs_code_hide">
+<pre><span style="color: #008080"> 1</span> <span style="color: #0000ff">&lt;?</span><span style="color: #ff00ff">xml version="1.0" encoding="UTF-8"</span><span style="color: #0000ff">?&gt;</span>
+<span style="color: #008080"> 2</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">beans </span><span style="color: #ff0000">xmlns</span><span style="color: #0000ff">="http://www.springframework.org/schema/beans"</span><span style="color: #ff0000"> xmlns:xsi</span><span style="color: #0000ff">="http://www.w3.org/2001/XMLSchema-instance"</span><span style="color: #ff0000"> xmlns:mvc</span><span style="color: #0000ff">="http://www.springframework.org/schema/mvc"</span>
+<span style="color: #008080"> 3</span> <span style="color: #ff0000">    xmlns:context</span><span style="color: #0000ff">="http://www.springframework.org/schema/context"</span><span style="color: #ff0000"> xmlns:tx</span><span style="color: #0000ff">="http://www.springframework.org/schema/tx"</span><span style="color: #ff0000"> xmlns:util</span><span style="color: #0000ff">="http://www.springframework.org/schema/util"</span>
+<span style="color: #008080"> 4</span> <span style="color: #ff0000">    xmlns:aop</span><span style="color: #0000ff">="http://www.springframework.org/schema/aop"</span>
+<span style="color: #008080"> 5</span> <span style="color: #ff0000">    xsi:schemaLocation</span><span style="color: #0000ff">="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+</span><span style="color: #008080"> 6</span> <span style="color: #0000ff">        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd    
+</span><span style="color: #008080"> 7</span> <span style="color: #0000ff">        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+</span><span style="color: #008080"> 8</span> <span style="color: #0000ff">        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+</span><span style="color: #008080"> 9</span> <span style="color: #0000ff">        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+</span><span style="color: #008080">10</span> <span style="color: #0000ff">        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd"</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">11</span> 
+<span style="color: #008080">12</span>     
+<span style="color: #008080">13</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> 注解注册 </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">14</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">context:annotation-config </span><span style="color: #0000ff">/&gt;</span>
+<span style="color: #008080">15</span>     
+<span style="color: #008080">16</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">context:component-scan </span><span style="color: #ff0000">base-package</span><span style="color: #0000ff">="com.test"</span> <span style="color: #0000ff">/&gt;</span>
+<span style="color: #008080">17</span>     
+<span style="color: #008080">18</span> <span style="color: #0000ff">&lt;/</span><span style="color: #800000">beans</span><span style="color: #0000ff">&gt;</span></pre>
+</div>
+<span class="cnblogs_code_collapse">spring-content.xml</span></div>
+<ul>
+<li>&nbsp;&nbsp;&nbsp; 在src/main/resources/spring，新建一个spring-mvc.xml的配置文件,进行相关配置</li>
+</ul>
+<p>　　　　<img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/851491-20161111163008030-861874022.png" alt=""></p>
+<div class="cnblogs_code"><img id="code_img_closed_d69d0b02-aa58-4603-9c4e-24c78204577b" class="code_img_closed" src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/ContractedBlock.gif" alt=""><img id="code_img_opened_d69d0b02-aa58-4603-9c4e-24c78204577b" class="code_img_opened" style="display: none" src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/ExpandedBlockStart.gif" alt="">
+<div id="cnblogs_code_open_d69d0b02-aa58-4603-9c4e-24c78204577b" class="cnblogs_code_hide">
+<pre><span style="color: #008080"> 1</span> <span style="color: #0000ff">&lt;?</span><span style="color: #ff00ff">xml version="1.0" encoding="UTF-8" standalone="no"</span><span style="color: #0000ff">?&gt;</span>
+<span style="color: #008080"> 2</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">beans </span><span style="color: #ff0000">xmlns</span><span style="color: #0000ff">="http://www.springframework.org/schema/beans"</span>
+<span style="color: #008080"> 3</span> <span style="color: #ff0000">    xmlns:context</span><span style="color: #0000ff">="http://www.springframework.org/schema/context"</span>
+<span style="color: #008080"> 4</span> <span style="color: #ff0000">    xmlns:aop</span><span style="color: #0000ff">="http://www.springframework.org/schema/aop"</span><span style="color: #ff0000"> xmlns:mvc</span><span style="color: #0000ff">="http://www.springframework.org/schema/mvc"</span>
+<span style="color: #008080"> 5</span> <span style="color: #ff0000">    xmlns:p</span><span style="color: #0000ff">="http://www.springframework.org/schema/p"</span><span style="color: #ff0000"> xmlns:xsi</span><span style="color: #0000ff">="http://www.w3.org/2001/XMLSchema-instance"</span>
+<span style="color: #008080"> 6</span> <span style="color: #ff0000">    xsi:schemaLocation</span><span style="color: #0000ff">="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+</span><span style="color: #008080"> 7</span> <span style="color: #0000ff">        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+</span><span style="color: #008080"> 8</span> <span style="color: #0000ff">        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+</span><span style="color: #008080"> 9</span> <span style="color: #0000ff">        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd"</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">10</span> 
+<span style="color: #008080">11</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> 自动扫描的包名 </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">12</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">context:component-scan </span><span style="color: #ff0000">base-package</span><span style="color: #0000ff">="com.test.controller"</span> <span style="color: #0000ff">/&gt;</span>
+<span style="color: #008080">13</span> 
+<span style="color: #008080">14</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> 默认的注解映射的支持 </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">15</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">mvc:annotation-driven</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">16</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">mvc:message-converters</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">17</span>             <span style="color: #0000ff">&lt;</span><span style="color: #800000">bean </span><span style="color: #ff0000">class</span><span style="color: #0000ff">="org.springframework.http.converter.StringHttpMessageConverter"</span> <span style="color: #0000ff">/&gt;</span>
+<span style="color: #008080">18</span>             <span style="color: #0000ff">&lt;</span><span style="color: #800000">bean
+</span><span style="color: #008080">19</span>                 <span style="color: #ff0000">class</span><span style="color: #0000ff">="org.springframework.http.converter.ResourceHttpMessageConverter"</span> <span style="color: #0000ff">/&gt;</span>
+<span style="color: #008080">20</span>         <span style="color: #0000ff">&lt;/</span><span style="color: #800000">mvc:message-converters</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">21</span>     <span style="color: #0000ff">&lt;/</span><span style="color: #800000">mvc:annotation-driven</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">22</span> 
+<span style="color: #008080">23</span> 
+<span style="color: #008080">24</span> 
+<span style="color: #008080">25</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> 视图解释类,定义跳转的文件的前后缀 </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">26</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> &lt;bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"&gt; 
+</span><span style="color: #008080">27</span> <span style="color: #008000">        &lt;property name="viewClass" value="org.springframework.web.servlet.view.JstlView" 
+</span><span style="color: #008080">28</span> <span style="color: #008000">        /&gt; &lt;property name="prefix" value="/views/" /&gt; &lt;property name="suffix" value=".jsp" 
+</span><span style="color: #008080">29</span> <span style="color: #008000">        /&gt; &lt;property name="requestContextAttribute" value="rc" /&gt; &lt;/bean&gt; </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">30</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">bean </span><span style="color: #ff0000">id</span><span style="color: #0000ff">="viewResolver"</span>
+<span style="color: #008080">31</span> <span style="color: #ff0000">        class</span><span style="color: #0000ff">="org.springframework.web.servlet.view.InternalResourceViewResolver"</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">32</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">property </span><span style="color: #ff0000">name</span><span style="color: #0000ff">="viewClass"</span>
+<span style="color: #008080">33</span> <span style="color: #ff0000">            value</span><span style="color: #0000ff">="org.springframework.web.servlet.view.JstlView"</span> <span style="color: #0000ff">/&gt;</span>
+<span style="color: #008080">34</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">property </span><span style="color: #ff0000">name</span><span style="color: #0000ff">="prefix"</span><span style="color: #ff0000"> value</span><span style="color: #0000ff">="/view/"</span> <span style="color: #0000ff">/&gt;</span>
+<span style="color: #008080">35</span>         <span style="color: #0000ff">&lt;</span><span style="color: #800000">property </span><span style="color: #ff0000">name</span><span style="color: #0000ff">="suffix"</span><span style="color: #ff0000"> value</span><span style="color: #0000ff">=".jsp"</span> <span style="color: #0000ff">/&gt;</span>
+<span style="color: #008080">36</span>     <span style="color: #0000ff">&lt;/</span><span style="color: #800000">bean</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">37</span> 
+<span style="color: #008080">38</span> 
+<span style="color: #008080">39</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> 拦截器 </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">40</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> &lt;mvc:interceptors&gt; &lt;bean class="com.fpx.ce.foundation.preference.PreferenceChangeInterceptor" 
+</span><span style="color: #008080">41</span> <span style="color: #008000">        /&gt; &lt;mvc:interceptor&gt; &lt;mvc:mapping path="/page/home"/&gt; &lt;bean class="com.fpx.ce.foundation.user.UserInterceptor" 
+</span><span style="color: #008080">42</span> <span style="color: #008000">        /&gt; &lt;/mvc:interceptor&gt; &lt;mvc:interceptor&gt; &lt;mvc:mapping path="/service/**" /&gt; 
+</span><span style="color: #008080">43</span> <span style="color: #008000">        &lt;bean class="com.fpx.ce.foundation.log.LogHandlerInterceptor" /&gt; &lt;/mvc:interceptor&gt; 
+</span><span style="color: #008080">44</span> <span style="color: #008000">        &lt;mvc:interceptor&gt; &lt;mvc:mapping path="/test/**" /&gt; &lt;mvc:mapping path="/service/**" 
+</span><span style="color: #008080">45</span> <span style="color: #008000">        /&gt; &lt;bean class="com.lemon.finder.web.SharedRenderVariableInterceptor" /&gt; 
+</span><span style="color: #008080">46</span> <span style="color: #008000">        &lt;/mvc:interceptor&gt; &lt;/mvc:interceptors&gt; </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">47</span> 
+<span style="color: #008080">48</span> 
+<span style="color: #008080">49</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> 对静态资源文件的访问 方案一 （二选一） </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">50</span>     <span style="color: #0000ff">&lt;</span><span style="color: #800000">mvc:default-servlet-handler </span><span style="color: #0000ff">/&gt;</span>
+<span style="color: #008080">51</span> 
+<span style="color: #008080">52</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> 对静态资源文件的访问 方案二 （二选一） </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">53</span>     <span style="color: #008000">&lt;!--</span><span style="color: #008000"> &lt;mvc:resources mapping="/images/**" location="/images/" cache-period="31556926"/&gt; 
+</span><span style="color: #008080">54</span> <span style="color: #008000">        &lt;mvc:resources mapping="/js/**" location="/js/" cache-period="31556926"/&gt; 
+</span><span style="color: #008080">55</span> <span style="color: #008000">        &lt;mvc:resources mapping="/css/**" location="/css/" cache-period="31556926"/&gt; </span><span style="color: #008000">--&gt;</span>
+<span style="color: #008080">56</span> <span style="color: #0000ff">&lt;/</span><span style="color: #800000">beans</span><span style="color: #0000ff">&gt;</span></pre>
+</div>
+<span class="cnblogs_code_collapse">spring-mvc</span></div>
+<ul>
+<li>　　在src/main/java的com.test.controller中新建一个类</li>
+</ul>
+<p>　　　　<img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/851491-20161111163220936-1450571270.png" alt="">　　</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008080"> 1</span> <span style="color: #0000ff">package</span><span style="color: #000000"> com.test.controller;
+</span><span style="color: #008080"> 2</span> 
+<span style="color: #008080"> 3</span> 
+<span style="color: #008080"> 4</span> <span style="color: #0000ff">import</span><span style="color: #000000"> javax.servlet.http.HttpServletRequest;
+</span><span style="color: #008080"> 5</span> 
+<span style="color: #008080"> 6</span> <span style="color: #0000ff">import</span><span style="color: #000000"> org.springframework.stereotype.Controller;
+</span><span style="color: #008080"> 7</span> <span style="color: #0000ff">import</span><span style="color: #000000"> org.springframework.web.bind.annotation.RequestMapping;
+</span><span style="color: #008080"> 8</span> <span style="color: #0000ff">import</span><span style="color: #000000"> org.springframework.web.bind.annotation.ResponseBody;
+</span><span style="color: #008080"> 9</span> <span style="color: #0000ff">import</span><span style="color: #000000"> org.springframework.web.servlet.ModelAndView;
+</span><span style="color: #008080">10</span> 
+<span style="color: #008080">11</span> <span style="color: #000000">@Controller
+</span><span style="color: #008080">12</span> @RequestMapping("/testController"<span style="color: #000000">)
+</span><span style="color: #008080">13</span> <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span><span style="color: #000000"> TestController {
+</span><span style="color: #008080">14</span> 
+<span style="color: #008080">15</span>     @RequestMapping(value="/getView"<span style="color: #000000">)
+</span><span style="color: #008080">16</span> <span style="color: #000000">    @ResponseBody
+</span><span style="color: #008080">17</span>     <span style="color: #0000ff">public</span><span style="color: #000000"> ModelAndView getTest(HttpServletRequest request){
+</span><span style="color: #008080">18</span>         ModelAndView modelAndView = <span style="color: #0000ff">new</span> ModelAndView("test-jsp"<span style="color: #000000">);
+</span><span style="color: #008080">19</span>         <span style="color: #0000ff">return</span><span style="color: #000000"> modelAndView;
+</span><span style="color: #008080">20</span> <span style="color: #000000">    }
+</span><span style="color: #008080">21</span> }</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<ul>
+<li>　　在webapp中新建一个文件夹view，在view中新建一个test-jsp.jsp</li>
+</ul>
+<p>　　　　<img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/851491-20161111163432514-991505212.png" alt="">　　</p>
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/copycode.gif" alt="复制代码"></a></span></div>
+<pre><span style="color: #008080"> 1</span> <span style="background-color: #ffff00; color: #000000">&lt;%</span><span style="background-color: #f5f5f5; color: #000000">@ page language</span><span style="background-color: #f5f5f5; color: #000000">=</span><span style="background-color: #f5f5f5; color: #800000">"</span><span style="background-color: #f5f5f5; color: #800000">java</span><span style="background-color: #f5f5f5; color: #800000">"</span><span style="background-color: #f5f5f5; color: #000000"> contentType</span><span style="background-color: #f5f5f5; color: #000000">=</span><span style="background-color: #f5f5f5; color: #800000">"</span><span style="background-color: #f5f5f5; color: #800000">text/html; charset=UTF-8</span><span style="background-color: #f5f5f5; color: #800000">"</span>
+<span style="color: #008080"> 2</span> <span style="background-color: #f5f5f5; color: #000000">    pageEncoding</span><span style="background-color: #f5f5f5; color: #000000">=</span><span style="background-color: #f5f5f5; color: #800000">"</span><span style="background-color: #f5f5f5; color: #800000">UTF-8</span><span style="background-color: #f5f5f5; color: #800000">"</span><span style="background-color: #ffff00; color: #000000">%&gt;</span>
+<span style="color: #008080"> 3</span> <span style="color: #0000ff">&lt;!</span><span style="color: #ff00ff">DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080"> 4</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">html</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080"> 5</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">head</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080"> 6</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">meta </span><span style="color: #ff0000">http-equiv</span><span style="color: #0000ff">="Content-Type"</span><span style="color: #ff0000"> content</span><span style="color: #0000ff">="text/html; charset=UTF-8"</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080"> 7</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">title</span><span style="color: #0000ff">&gt;</span>Insert title here<span style="color: #0000ff">&lt;/</span><span style="color: #800000">title</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080"> 8</span> <span style="color: #0000ff">&lt;/</span><span style="color: #800000">head</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080"> 9</span> <span style="color: #0000ff">&lt;</span><span style="color: #800000">body</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">10</span> <span style="color: #000000">    Hello World!!!
+</span><span style="color: #008080">11</span> <span style="color: #0000ff">&lt;/</span><span style="color: #800000">body</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #008080">12</span> <span style="color: #0000ff">&lt;/</span><span style="color: #800000">html</span><span style="color: #0000ff">&gt;</span></pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/copycode.gif" alt="复制代码"></a></span></div></div>
+<ul>
+<li>　　搭建完成，如下图</li>
+</ul>
+<p>　　　　<img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/851491-20161111163738999-682350737.png" alt=""></p>
+<p>&nbsp;</p>
+<ul>
+<li>　　发布到tomcat中，并启动tomcat</li>
+</ul>
+<p>　　　　<img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/851491-20161111164003780-477669606.png" alt=""></p>
+<ul>
+<li>　　在浏览器中访问 http://localhost:8080/test-spring/testController/getView</li>
+</ul>
+<p>　　　　<img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/851491-20161111164144749-1891184321.png" alt=""></p>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="https://www.cnblogs.com/h--d/category/782963.html" target="_blank">Java</a>,<a href="https://www.cnblogs.com/h--d/category/865570.html" target="_blank">Web</a>,<a href="https://www.cnblogs.com/h--d/category/1047453.html" target="_blank">Spring</a></div>
+<div id="EntryTag">标签: <a href="https://www.cnblogs.com/h--d/tag/Java/">Java</a>, <a href="https://www.cnblogs.com/h--d/tag/Maven/">Maven</a>, <a href="https://www.cnblogs.com/h--d/tag/Web/">Web</a>, <a href="https://www.cnblogs.com/h--d/tag/Spring/">Spring</a></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6054813,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;9cb367c8-7e9a-e511-9fc1-ac853d9f53cc&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/h--d/" target="_blank"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/20160906135639.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/h--d/">H__D</a><br>
+            <a href="http://home.cnblogs.com/u/h--d/followees">关注 - 5</a><br>
+            <a href="http://home.cnblogs.com/u/h--d/followers">粉丝 - 60</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;9cb367c8-7e9a-e511-9fc1-ac853d9f53cc&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6054813,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(6054813,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/h--d/p/6001366.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/h--d/p/6001366.html" title="发布于2016-10-26 18:07">【Maven】使用Maven构建多模块项目</a><br><a href="https://www.cnblogs.com/h--d/p/6055378.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/h--d/p/6055378.html" title="发布于2016-11-11 19:17">【JSP】Tiles框架的基本使用</a><br></div>
+</div>
+
+
+	<div class="itemdesc">
+		posted on <span id="post-date">2016-11-11 16:43</span> <a href="https://www.cnblogs.com/h--d/">H__D</a> 阅读(<span id="post_view_count">8032</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6054813" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/h--d/p/6054813.html#" onclick="AddToWz(6054813);return false;">收藏</a>
+	</div>
+</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=257288,cb_entryId=6054813,cb_blogApp=currentBlogApp,cb_blogUserGuid='9cb367c8-7e9a-e511-9fc1-ac853d9f53cc',cb_entryCreatedDate='2016/11/11 16:43:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/h--d/p/6054813.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/h--d/p/6054813.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型组态工控、电力仿真CAD与GIS源码库！</a><br><a href="http://clickc.admaster.com.cn/c/a113612,b3081535,c1705,i0,m101,8a1,8b3,h" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-EH&#39;)">【活动】华为云12.12会员节全场1折起 满额送Mate20</a><br><a href="http://clickc.admaster.com.cn/c/a116493,b2949399,c1705,i0,m101,8a1,8b3,h" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-会员节&#39;)">【活动】华为云会员节云服务特惠1折起</a><br><a href="https://cloud.tencent.com/act/southwest?fromSource=gwzcw.2017844.2017844.2017844" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-腾讯云&#39;)">【推荐】服务器100%基准CPU性能，1核1G首年168元，限时特惠！</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="https://cloud.tencent.com/act/special/amd?fromSource=gwzcw.1351353.1351353.1351353" target="_blank"><img width="300" height="250" src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/24442-20181129113406214-695115565.jpg" alt="腾讯云1129" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;C1&#39;);"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>相关博文：</b><br>·  <a href="https://www.cnblogs.com/leiOOlei/p/3414612.html" target="_blank" onclick="clickRecomItmem(3414612,&#39;ZZXVQrSdGhej95TPxmfa/2ikuRhWulylWGev5pzEoiO13CLoUb89V1qnc/T/78SXeG0GOJxd9xeRtE7RJyK9FM7ZOXHxegyLPXc+B0WScYJrQe7RAsdVO3FHxI1EV4iVq7Nj2rnG1DC9mj6pkbk=&#39;)">Maven3路程（六）用Maven创建Spring3 MVC项目</a><br>·  <a href="https://www.cnblogs.com/wzz1020/p/4835413.html" target="_blank" onclick="clickRecomItmem(4835413,&#39;SmJB9s4A0m5+801s/2c8m305fPoFX++MBo8mcEF7/ycyYq5WG6uVtI2cByzfc79PxiiMWgqaD9/IsBq6RUrf/M9i+n2pqG7JBxYNNVaeCg3skPg2JqlhEAsM/yoec83/y16zmP+Myvrac3cCjQA=&#39;)">使用Eclipse构建Maven的SpringMVC项目</a><br>·  <a href="https://www.cnblogs.com/jerryfchina/articles/Jerryfchina.html" target="_blank" onclick="clickRecomItmem(3699753,&#39;rv+7tahHAsVadofhkzKRUwng0TvI6+gRDKVRPXnQfwZAUxs5/Lflr2KhG3PANLQ4BW9tMoaKsVCt6zI4bWceOTU1dZsD/BIVF43p05r3/+T8x5lgCBhgNy/iFzEcb323kzB6HWKcTUvpXvfD1Uk=&#39;)">使用 Eclipse 构建 Maven3.0 + SpringMVC 项目(一.完成框架搭建)</a><br>·  <a href="https://www.cnblogs.com/QQ931697811/p/5182927.html" target="_blank" onclick="clickRecomItmem(5182927,&#39;+D/IavZI+bnkGYiG9dyskvtWDe78H8wfsEeEeflA/l8mDxCviAKYKxJRCHT3hcNwL8uuaokNLKW2n3Xxh2gwI1BAxGGsINUC7+sCjQt4pYO7dTC5FrTa25kBToG6brGaeFpYnTYqiMH0pVLMDAk=&#39;)">Eclipse一步一步搭建SSM+Maven</a><br>·  <a href="https://www.cnblogs.com/mybest/p/4265872.html" target="_blank" onclick="clickRecomItmem(4265872,&#39;hELa2Hum+p+VREG+aNkxY9TnOeWwAnq4fv+FjpPk5NtE/+cvq3+0GR9KmRizwc9FBlP3HyDaBAmtvLbti+4qYXS8igWKh4YZqgPUSVTbfcq1DsGUmP3iMEbQa/iplojRPIbIWzA95IYc6GuCtbE=&#39;)">简单MVC项目搭建--Java1.7+Eclipse luna + Maven 3.2.5 +spring 4.1.4</a><br></div></div>
+<script async="async" src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/gpt.js"></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id="cnblogs_c2" class="c_ad_block">
+    <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CJzsqdmCpt8CFZUxKgod93wL7Q">
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    <div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" data-google-container-id="1" data-load-complete="true" src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/saved_resource.html"></iframe></div></div>
+</div>
+<div id="under_post_kb"><div class="itnews c_ad_block"><b>最新新闻</b>：<br> ·  <a href="https://news.cnblogs.com/n/615071/" target="_blank">两周之后台湾地区将关闭3G网络 年后全部使用4G</a><br> ·  <a href="https://news.cnblogs.com/n/615068/" target="_blank">加州满足不了苹果的胃口：我们要建设美国新农村</a><br> ·  <a href="https://news.cnblogs.com/n/615065/" target="_blank">蔚来ES8发生车祸 回应：前舱吸收碰撞能量 无需弹出气囊</a><br> ·  <a href="https://news.cnblogs.com/n/615064/" target="_blank">马斯克的疯狂与脆弱：深度复盘特斯拉穿越生产地狱之路</a><br> ·  <a href="https://news.cnblogs.com/n/615063/" target="_blank">ofo回应总部秒退押金：和线上退押金没有区别</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+                    <div class="spacer">&nbsp;</div>
+                </div>
+            </td>
+        </tr>
+    </tbody></table>
+
+
+    
+
+<table width="97%" align="center" cellpadding="2" cellspacing="0" border="0">
+<tbody><tr>
+	<td colspan="2" align="center"><a href="http://www.cnblogs.com/"><img src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/footer.gif" border="0"></a></td>
+</tr>
+<tr>
+	<td align="right" width="45%">Copyright © H__D</td><td align="left">
+	Powered by: <a href="http://www.cnblogs.com/">博客园</a>	模板提供：<a href="http://blog.hjenglish.com/">沪江博客</a>
+	</td>
+</tr></tbody></table>
+
+
+
+	
+
+</div>
+
+
+
+<iframe id="google_osd_static_frame_6019941735754" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./【Maven】Eclipse 使用Maven创建SpringMVC Web项目 - H__D - 博客园_files/saved_resource(1).html"></iframe></body></html>
